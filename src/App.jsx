@@ -1,13 +1,18 @@
-
-import './App.css'
+import "./App.css";
 import Headers from "./component/Headers";
-function App() {
+import Sidebar from "./component/Sidebar";
+import { Provider } from "react-redux";
+import { store } from "./store/app";
+import Home from "./pages/Home";
 
+function App() {
   return (
-    <>
-     <Headers />
-    </>
-  )
+    <Provider store={store}>
+      <Headers />
+      <Sidebar />
+      <Home />
+    </Provider>
+  );
 }
 
-export default App
+export default App;
