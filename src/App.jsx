@@ -1,18 +1,34 @@
+import React from "react";
 import "./App.css";
 import Headers from "./component/Headers";
-import Sidebar from "./component/Sidebar";
+import MainContainer from "./component/MainContainer";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./pages/Home";
 import { Provider } from "react-redux";
 import { store } from "./store/app";
-import Home from "./pages/Home";
 
 function App() {
   return (
     <Provider store={store}>
-      <Headers />
-      <Sidebar />
-      <Home />
+      <div className="overflow-auto">
+        <Headers />
+        <MainContainer />
+      </div>
     </Provider>
   );
 }
+
+export const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+    ],
+  },
+]);
 
 export default App;

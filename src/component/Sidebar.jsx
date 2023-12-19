@@ -9,12 +9,12 @@ import { SiYoutubegaming } from "react-icons/si";
 
 const Sidebar = () => {
   const navigationActive =
-    "w-48 p-2 my-2 cursor-pointer bg-stone-100 rounded-md";
+    "w-48 p-2 my-2 cursor-pointer bg-stone-400 rounded-md";
   const navigation =
-    "w-42 p-2 my-2 p-2 cursor-pointer hover:bg-stone-100 rounded-md flex";
+    "w-42 p-2 my-2 p-2 cursor-pointer hover:bg-stone-400 rounded-md flex";
 
   return (
-    <div className="w-48 h-5/6 shadow-md p-2">
+    <div className="w-48 max-h-screen shadow-md p-2">
       <ul className="">
         <li className={navigation}>
           {" "}
