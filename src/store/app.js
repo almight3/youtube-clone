@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import searchSlice from "./searchSlice";
+import searchReducer from "./searchSlice";
+import menuReducer from "./menuSlice";
 
 export const store = configureStore({
   reducer: {
-    cachedSearchVideos: searchSlice,
+    cachedSearchSuggestion: searchReducer,
+    isMenuOpen: menuReducer,
   },
 });

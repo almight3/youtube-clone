@@ -10,7 +10,7 @@ import { store } from "./store/app";
 function App() {
   return (
     <Provider store={store}>
-      <div className="overflow-auto">
+      <div className="overflow-hidden">
         <Headers />
         <MainContainer />
       </div>

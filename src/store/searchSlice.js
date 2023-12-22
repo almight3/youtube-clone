@@ -1,11 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const initialState = {
+  cachedAutoSearchSuggestion: {},
+};
+
 const searchSlice = createSlice({
   name: "search",
-  initialState: {},
+  initialState,
   reducers: {
     cacheSuggestions: (state, action) => {
-      state = Object.assign(state, action.payload);
+      const cachedResult = {
+        ...state.cachedAutoSearchSuggestion,
+        ...action.payload,
+      };
+      state.cachedAutoSearchSuggestion = cachedResult;
     },
   },
 });
